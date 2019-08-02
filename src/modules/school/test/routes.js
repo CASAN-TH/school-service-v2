@@ -105,7 +105,16 @@ describe('School CRUD routes tests', function () {
                     return done(err);
                 }
                 var resp = res.body;
-                assert.equal(resp.data.name, mockup.name);
+                assert.equal(resp.data.schoolname, mockup.schoolname);
+                assert.equal(resp.data.under, mockup.under);
+                assert.equal(resp.data.area, mockup.area);
+                assert.equal(resp.data.subdistric, mockup.subdistric);
+                assert.equal(resp.data.distric, mockup.distric);
+                assert.equal(resp.data.province, mockup.province);
+                assert.equal(resp.data.registrar, mockup.registrar);
+                assert.equal(resp.data.position, mockup.position);
+                assert.equal(resp.data.direction, mockup.direction);
+                assert.equal(resp.data.positions, mockup.positions);
                 done();
             });
     });
@@ -123,7 +132,16 @@ describe('School CRUD routes tests', function () {
                 }
                 var resp = res.body;
                 var update = {
-                    name: 'name update'
+                    schoolname: 'ไตรพัฒน์2',
+                    under: 'สำนักงานคณะกรรมการส่งเสริมการศึกษาเอกชน2',
+                    area: 'ประถมศึกษาประทุมธานีเขต 22',
+                    subdistric: 'บึงคำพร้อย2',
+                    distric: 'ลำลูกกา2',
+                    province: 'ปทุมธานี2',
+                    registrar: 'ศิธร สิทธิชัย2',
+                    position: 'นายทะเบียน2',
+                    direction: 'นางสาวนันทนา เกษมโกสินทร์2',
+                    positions: 'ผู้อำนวยการ2'
                 }
                 request(app)
                     .put('/api/schools/' + resp.data._id)
@@ -135,7 +153,16 @@ describe('School CRUD routes tests', function () {
                             return done(err);
                         }
                         var resp = res.body;
-                        
+                        assert.equal(resp.data.schoolname, update.schoolname);
+                        assert.equal(resp.data.under, update.under);
+                        assert.equal(resp.data.area, update.area);
+                        assert.equal(resp.data.subdistric, update.subdistric);
+                        assert.equal(resp.data.distric, update.distric);
+                        assert.equal(resp.data.province, update.province);
+                        assert.equal(resp.data.registrar, update.registrar);
+                        assert.equal(resp.data.position, update.position);
+                        assert.equal(resp.data.direction, update.direction);
+                        assert.equal(resp.data.positions, update.positions);
                         done();
                     });
             });
