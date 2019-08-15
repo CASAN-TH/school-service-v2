@@ -52,7 +52,6 @@ exports.create = function (req, res) {
         };
     });
 };
-
 exports.getByID = function (req, res, next, id) {
 
     if (!mongoose.Types.ObjectId.isValid(id)) {
@@ -61,7 +60,6 @@ exports.getByID = function (req, res, next, id) {
             message: 'Id is invalid'
         });
     }
-
     School.findById(id, function (err, data) {
         if (err) {
             return res.status(400).send({
@@ -74,7 +72,6 @@ exports.getByID = function (req, res, next, id) {
         };
     });
 };
-
 exports.read = function (req, res) {
     res.jsonp({
         status: 200,
