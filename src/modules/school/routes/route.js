@@ -16,6 +16,7 @@ module.exports = function (app) {
 
     app.param('schoolId', controller.getByID);
 
+   
     /**
      * Message Queue
      * exchange : ชื่อเครือข่ายไปรษณีย์  เช่น casan

@@ -41,10 +41,13 @@ exports.create = function (req, res) {
                 message: errorHandler.getErrorMessage(err)
             });
         } else {
+
+            mq.publish('School', 'created', JSON.stringify(dataSend));
             res.jsonp({
                 status: 200,
                 data: data
             });
+           
             /**
              * Message Queue
              */
