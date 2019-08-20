@@ -42,7 +42,7 @@ exports.create = function (req, res) {
             });
         } else {
 
-            mq.publish('School', 'created', JSON.stringify(dataSend));
+            mq.publish('School', 'created', JSON.stringify(data));
             res.jsonp({
                 status: 200,
                 data: data
